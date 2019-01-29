@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Button from 'antd/lib/button';
-import { Form, Card, InputNumber } from 'antd';
+import { Form, InputNumber } from 'antd';
 
 class App extends Component {
     constructor (props) {
@@ -23,7 +23,7 @@ class App extends Component {
         return {
             amount: 0,
             total: function () {
-                return this.specialPriceCondition(this.amount) ? this.specialPrice(): this.price * this.amount;
+                return this.specialPriceCondition(this.amount) ? this.specialPrice(this.amount): this.price * this.amount;
             },
             label,
             price,
